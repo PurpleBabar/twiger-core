@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-0" : {
-            "twigger" : "lib/"
+            "files": [ "lib/Router.php", "lib/Twigger.php" ]
         }
     },
     "prefer-stable": true
