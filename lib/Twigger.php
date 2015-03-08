@@ -1,6 +1,6 @@
 <?php
 
-namespace twigger;
+namespace twiger;
 
 class Twigger{
 	
@@ -8,7 +8,7 @@ class Twigger{
 	private $twig;
 
 	public function __construct($path = array()){
-		$path = array_merge($path, array(__DIR__.'/error', __DIR__.'/../../../src/templates'));
+		$path = array_merge($path, array(__DIR__.'/../error', __DIR__.'/../../../../src/templates'));
 		$this->loader = new \Twig_Loader_Filesystem($path);
 		$this->twig = new \Twig_Environment($this->loader, array(
 		    'cache' => false,
