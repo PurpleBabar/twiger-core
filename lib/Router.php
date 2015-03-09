@@ -12,7 +12,9 @@ class Router{
 	public function handle($requestUri){
 		foreach ($this->routes as $route)
 			if (preg_match($this->matcher($route['pattern']), $requestUri))
-				return $this->params($route, $requestUri);	
+				return $this->params($route, $requestUri);
+			else
+				return null;	
 	}
 
 	public function matcher($requestUri){

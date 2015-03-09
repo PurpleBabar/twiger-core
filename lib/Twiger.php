@@ -2,7 +2,7 @@
 
 namespace twiger;
 
-class Twigger{
+class Twiger{
 	
 	private $loader;
 	private $twig;
