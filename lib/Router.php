@@ -1,5 +1,5 @@
 <?php
-namespace twigger;
+namespace twiger;
 
 class Router{
 
@@ -12,9 +12,7 @@ class Router{
 	public function handle($requestUri){
 		foreach ($this->routes as $route)
 			if (preg_match($this->matcher($route['pattern']), $requestUri))
-				return $this->params($route, $requestUri);
-			else
-				return null;	
+				return $this->params($route, $requestUri);	
 	}
 
 	public function matcher($requestUri){
