@@ -18,9 +18,7 @@
         "mustangostang/spyc": "0.5.*"
     },
     "autoload": {
-        "psr-4" : {
             "files": [ "lib/Router.php", "lib/Twiger.php" ]
-        }
     },
     "prefer-stable": true
 }
