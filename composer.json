@@ -1,7 +1,7 @@
 {
-    "name": "purplebabar/twiger",
+    "name": "purplebabar/twigerCore",
     "type": "project",
-    "description": "A lightweight framework for intwigation",
+    "description": "Core for Twiger",
     "version": "1.0.0",
     "time": "2015/03/08",
     "license": "MIT",
