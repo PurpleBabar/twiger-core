@@ -24,5 +24,9 @@ class Twiger{
 			echo $this->twig->render('error.html.twig', array('error' => $e, 'errorType' => get_class($e)));
 		}
 	}
+	
+	public function addFunction($function){
+		$this->twig->addFunction($function);
+	}
 
 }
