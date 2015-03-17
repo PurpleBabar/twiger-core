@@ -10,9 +10,9 @@ class Router{
 	}
 
 	public function handle($requestUri){
-		foreach ($this->routes as $route)
+		foreach ($this->routes as $name => $route)
 			if (preg_match($this->matcher($route['pattern']), $requestUri))
-				return $this->params($route, $requestUri);	
+				return $this->params($route, $requestUri, $name);	
 	}
 
 	public function matcher($requestUri){
@@ -22,7 +22,7 @@ class Router{
 		return $matcher;
 	}
 
-	public function params($route, $requestUri){
+	public function params($route, $requestUri, $name){
 		$base = explode('/', $route['pattern']);
 		$parametered = explode('/', $requestUri);
 		for ($i=0; $i < count($base) ; $i++) { 
@@ -30,6 +30,8 @@ class Router{
 				$route['route_params'][substr($base[$i], 1, -1)] = $parametered[$i];
 			}
 		}
+		$route['name'] = $name;
+		$route['requestUri'] = $requestUri;
 		return $route;
 	}
 

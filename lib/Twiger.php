@@ -14,7 +14,9 @@ class Twiger{
 		$this->loader = new \Twig_Loader_Filesystem($path);
 		$this->twig = new \Twig_Environment($this->loader, array(
 		    'cache' => false,
+		    'debug' => true
 		));
+		$this->twig->addExtension(new \Twig_Extension_Debug());
 	}
 
 	public function render($template, $params = array()){
@@ -24,7 +26,7 @@ class Twiger{
 			echo $this->twig->render('error.html.twig', array('error' => $e, 'errorType' => get_class($e)));
 		}
 	}
-	
+
 	public function addFunction($function){
 		$this->twig->addFunction($function);
 	}
