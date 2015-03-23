@@ -18,7 +18,7 @@ class Router{
 	public function matcher($requestUri){
 		$matcher = addcslashes($requestUri, '/');
 		$matcher = preg_replace('/({\w+})/', '\w+', $matcher);
-		$matcher = '/('.$matcher.')/';
+		$matcher = '/('.$matcher.')$/A';
 		return $matcher;
 	}
 
