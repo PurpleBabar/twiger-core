@@ -27,8 +27,10 @@ class Twiger{
 		}
 	}
 
-	public function addFunction($function){
-		$this->twig->addFunction($function);
+	public function addFunctions($functions){
+		foreach ($functions as $function) {
+			$this->twig->addFunction($function);
+		}
 	}
 
 }
