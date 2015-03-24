@@ -9,7 +9,7 @@ class Twiger{
 	private $params;
 
 	public function __construct($params = array() ,$path = array()){
-		$path = array_merge($path, array(__DIR__.'/../error', __DIR__.'/../../../../src/templates'));
+		$path = array_merge($path, array(__DIR__.'/../../../../src/templates', __DIR__.'/../error'));
 		$this->params = $params;
 		$this->loader = new \Twig_Loader_Filesystem($path);
 		$this->twig = new \Twig_Environment($this->loader, array(
