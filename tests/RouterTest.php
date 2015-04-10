@@ -1,6 +1,6 @@
 <?php
 
-include_once "../lib/Router.php";
+include_once __DIR__."../lib/Router.php";
 
 class RouterTest extends \PHPUnit_Framework_TestCase{
 	
