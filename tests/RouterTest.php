@@ -10,9 +10,11 @@ class RouterTest extends \PHPUnit_Framework_TestCase{
 	private $_router;
 
 	public function setUp(){
-		$this->_routes = array('home' => array('pattern' => '/lol/mdr', 'template' => '/mdr/pwet'),
-						'bis' => array('pattern' => '/xd/ptdr', 'template' => '/ptdr/asap'),
-						'ter' => array('pattern' => '/afk/vip', 'template' => '/vip/ppda')); 
+
+		$this->_routes = array('home' => array('pattern' => '/lol/mdr', 'template' => 'try'),
+						'bis' => array('pattern' => '/xd/ptdr', 'template' => 'trybis'),
+						'ter' => array('pattern' => '/afk/vip', 'template' => 'tryter'));
+
 		$this->_router = new Router($this->_routes);
 	}
 
@@ -23,8 +25,9 @@ class RouterTest extends \PHPUnit_Framework_TestCase{
 
 	public function testHandle(){
 
-		$requesUri="/vip/ppda";
-		$this->assertInternalType('array', $this->_router->handle($requesUri));
+		$requesUri="/lol/vip";
+		$toAssert = $this->_router->handle($requesUri);
+		$this->assertTrue(is_null($toAssert) || is_array($toAssert));
 
 	}
 
