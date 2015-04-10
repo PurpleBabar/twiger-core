@@ -24,14 +24,14 @@ class RouterTest extends \PHPUnit_Framework_TestCase{
 	public function testHandle(){
 
 		$requesUri="/vip/ppda";
-		$this->assertType('array', $this->_router->handle($requesUri));
+		$this->assertInternalType('array', $this->_router->handle($requesUri));
 
 	}
 
 	public function testMatcher(){
 
 		$requesUri="/vip/ppda";
-		$this->assertType('string', $this->_router->matcher($requesUri));
+		$this->assertInternalType('string', $this->_router->matcher($requesUri));
 
 	}
 
@@ -39,7 +39,7 @@ class RouterTest extends \PHPUnit_Framework_TestCase{
 
 		$route = array('home' => array('pattern' => '/lol/mdr', 'template' => '/mdr/pwet'));
 		$requesUri="/vip/ppda";
-		$this->assertType('array', $this->_router->params($route, $requesUri, 'try'));
+		$this->assertInternalType('array', $this->_router->params($route, $requesUri, 'try'));
 
 	}
 
