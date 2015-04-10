@@ -2,6 +2,8 @@
 
 include_once __DIR__."/../lib/Router.php";
 
+use twiger\Router as Router;
+
 class RouterTest extends \PHPUnit_Framework_TestCase{
 	
 	private $_routes;
