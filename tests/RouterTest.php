@@ -1,8 +1,6 @@
 <?php
 
-namespace twiger;
-
-use twiger\Router as Router;
+include_once "../lib/Router.php";
 
 class RouterTest extends \PHPUnit_Framework_TestCase{
 	
