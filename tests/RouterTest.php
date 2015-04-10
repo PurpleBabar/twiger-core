@@ -37,7 +37,7 @@ class RouterTest extends \PHPUnit_Framework_TestCase{
 
 	public function testParams(){
 
-		$route = array('home' => array('pattern' => '/lol/mdr', 'template' => '/mdr/pwet'));
+		$route = array('pattern' => '/lol/mdr', 'template' => '/mdr/pwet');
 		$requesUri="/vip/ppda";
 		$this->assertInternalType('array', $this->_router->params($route, $requesUri, 'try'));
 
