@@ -4,7 +4,7 @@ namespace twiger;
 
 use twiger\Router as Router;
 
-class RouterTest extends PHPUnit_Framework_TestCase{
+class RouterTest extends \PHPUnit_Framework_TestCase{
 	
 	private $_routes;
 	private $_router;
