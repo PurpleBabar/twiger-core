@@ -21,7 +21,7 @@ class Twiger{
 
 	public function render($template, $params = array()){
 		try {
-			echo $this->twig->render($template, array_merge($params, $this->params) );
+			return $this->twig->render($template, array_merge($params, $this->params) );
 		} catch (\Twig_Error $e) {
 			echo $this->twig->render('error.html.twig', array('error' => $e, 'errorType' => get_class($e)));
 		}
