@@ -8,7 +8,7 @@ class Twiger{
 	private $twig;
 	private $params;
 
-	public function __construct($params = array() ,$path = array()){
+	public function __construct($config = array(), $params = array(), $path = array()){
 		$path = array_merge($path, array(__DIR__.'/../../../../src/templates', __DIR__.'/../error'));
 		$this->params = $params;
 		$this->loader = new \Twig_Loader_Filesystem($path);
@@ -17,6 +17,12 @@ class Twiger{
 		    'debug' => true
 		));
 		$this->twig->addExtension(new \Twig_Extension_Debug());
+
+		if (isset($config['database'])) {
+			\ORM::configure('mysql:host='.$config['database']['host'].';dbname='.$config['database']['name']);
+			\ORM::configure('username', $config['database']['user']);
+			\ORM::configure('password', $config['database']['password']);
+		}
 	}
 
 	public function render($template, $params = array()){
