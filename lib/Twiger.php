@@ -4,9 +4,9 @@ namespace twiger;
 
 class Twiger{
 	
-	private $loader;
-	private $twig;
-	private $params;
+	protected $loader;
+	protected $twig;
+	protected $params;
 
 	public function __construct($config = array(), $params = array(), $path = array()){
 		$path = array_merge($path, array(__DIR__.'/../../../../src/templates', __DIR__.'/../error'));
