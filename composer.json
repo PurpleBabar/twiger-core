@@ -17,6 +17,9 @@
         "twig/twig": "~1.18",
         "mustangostang/spyc": "0.5.*"
     },
+    "require-dev": {
+        "kahlan/kahlan": "^3.1"
+    },
     "autoload": {
             "files": [ "lib/Router.php", "lib/Twiger.php", "lib/PathError.php" ]
     },
