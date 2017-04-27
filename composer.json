@@ -20,6 +20,9 @@
     "require-dev": {
         "kahlan/kahlan": "^3.1"
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "autoload": {
             "files": [ "lib/Router.php", "lib/Twiger.php", "lib/PathError.php" ]
     },
